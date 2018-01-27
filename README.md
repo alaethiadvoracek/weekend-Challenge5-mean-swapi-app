@@ -3,9 +3,9 @@
 # TODO 
 
 ## SETUP 
-- [] File setup 
-- [] npm install packages
-- [] server running 
+- [x] File setup 
+- [x] npm install packages
+- [x] server running 
 - [] link API 
 
 ## BASE MODE 
