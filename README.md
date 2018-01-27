@@ -1,14 +1,14 @@
-##SWAPI API WEEKEND CHALLENGE 
+## SWAPI API WEEKEND CHALLENGE 
 
-##TODO 
+## TODO 
 
-#SETUP 
+# SETUP 
 - [] File setup 
 - [] npm install packages
 - [] server running 
 - [] link API 
 
-#BASE MODE 
+# BASE MODE 
 - [] Search View 
     - [] search results on DOM 
     - [] add favorite button 
@@ -16,9 +16,9 @@
     - [] delete favorite 
     - [] show total favorites (top right) ? 
 
-#HARD MODE 
+# HARD MODE 
 - [] get a giphy for each favorite when user clicks on favorite 
 - [] pagination in search view 
 
-#PRO MODE 
+# PRO MODE 
 - [] add comments to each favorite 
