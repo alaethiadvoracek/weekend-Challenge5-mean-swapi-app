@@ -1,9 +1,9 @@
 myApp.service('SwapiService',['$http', function($http) {
     console.log('inside service');
         const self = this;
-        self.searchResults = {list: []}
-        self.starWars.people = {list: []}
-        self.favorites.planets = { list: []}
+    let results = self.searchResults = {list: []}
+    let person = self.starWars.person = {list: []}
+    let planets = self.starWars.planets = { list: []}
 
 //GET requests//
 self.searchWithKeyword = function(source, searchText){
@@ -15,7 +15,7 @@ self.searchWithKeyword = function(source, searchText){
     $http.get(`https://www.swapi.co/api/${source}`, config)
         .then( function(response){
         
-        self.searchResults.list = response.data.results;       
+        results = response.data.results;       
     })
 };//end getting search results 
 //POST Requests//
@@ -31,22 +31,22 @@ self.addMyFavorites = function(favorite){
 }//end adding to favorites list 
 
 self.getMyFavorites = function (){
-    $http.get('/favorites/people')
+    $http.get('/favorites/person')
         .then( function(response){
-            console.log('getting my favorite people: ', response.data);
+            console.log('getting my favorite person: ', response.data);
                 
-            self.starWars.people.list = response.data;
+            person = response.data;
 
         })
         .catch( function(error){
-            console.log('error getting my favorite people: ', error);
+            console.log('error getting my favorite person: ', error);
                 
         })
-    $http.get('/favorites/people')
+    $http.get('/favorites/planets')
         .then( function(response){
             console.log('getting my favorite planets: ', response.data);
                 
-            self.starWars.planets.list = response.data;
+            planets = response.data;
 
         })
         .catch( function(error){

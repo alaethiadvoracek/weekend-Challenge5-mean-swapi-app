@@ -1,5 +1,5 @@
 <h1>Search View</h1>
-<button ng-click="vm.searchFor(vm.selectedOption)">Search</button>
+<button ng-click="vm.search(vm.selectedOption)">Search</button>
     <div>
         <label>Search By: </label>
             <select id="searchOptions">
@@ -7,10 +7,10 @@
                 <option value="planet">Planet</option>
             </select>
         <div>
-            <label >Search for:</label> <input type="text" ng-model="vm.selectedOption.searchText" placeholder="search with keyword" required >
+            <label>Search for:</label> <input type="text" ng-model="vm.selectedOption.searchText" placeholder="search with keyword">
         </div>
     </div>
-        <div ng-if="vm.toggle.people">
+        <div ng-if="vm.toggle.person">
             <div class ="results-card" ng-repeat="result in vm.searchResults.list">
                 <label>Name:</label> <label>{{result.name}}</label><br>
                 <label>Birth Year:</label> <label>{{result.birth_year}}</label><br>
@@ -29,7 +29,7 @@
                 <label>Terrain:</label> <label>{{result.terrain}}</label><br>
                 <label>Surface Water:</label> <label>{{result.surface_water}}</label><br>
                 <label>Residents:</label> <label>{{result.residents}}</label><br>
-                <button ng-click="vm.addToFavorites(result)">Add to Favorites</button>
+                <button ng-click="vm.addMyFavorites(result)">Add to Favorites</button>
             </div>
         </div>
         
