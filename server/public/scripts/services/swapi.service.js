@@ -1,9 +1,12 @@
 myApp.service('SwapiService',['$http', function($http) {
     console.log('inside service');
-        const self = this;
-    let results = self.searchResults = {list: []}
-    let person = self.starWars.person = {list: []}
-    let planets = self.starWars.planets = { list: []}
+    const self = this;
+
+
+    self.searchResults = { list: []}
+    self.favorites = {} 
+    self.favorites.person = {list: []}
+    self.favorites.planets = { list: []}
 
 //GET requests//
 self.searchWithKeyword = function(source, searchText){
@@ -15,7 +18,7 @@ self.searchWithKeyword = function(source, searchText){
     $http.get(`https://www.swapi.co/api/${source}`, config)
         .then( function(response){
         
-        results = response.data.results;       
+        self.searchResults = response.data.results;       
     })
 };//end getting search results 
 //POST Requests//
@@ -35,7 +38,7 @@ self.getMyFavorites = function (){
         .then( function(response){
             console.log('getting my favorite person: ', response.data);
                 
-            person = response.data;
+            self.favorites.person = response.data;
 
         })
         .catch( function(error){
@@ -46,7 +49,7 @@ self.getMyFavorites = function (){
         .then( function(response){
             console.log('getting my favorite planets: ', response.data);
                 
-            planets = response.data;
+            self.favorites.planets = response.data;
 
         })
         .catch( function(error){
