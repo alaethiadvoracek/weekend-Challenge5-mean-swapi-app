@@ -4,3 +4,17 @@
 <option value="person">Person</option>
 <option value="planet">Planet</option>
 </select>
+<table>
+    <thead>
+        <tr>
+            <th>Star Wars Person</th>
+            <th>Born</th>      
+        </tr>
+    </thead>    
+        <tbody>
+        <tr ng-repeat="person in vm.starWarsPerson">
+            <td>{{person.name}}</td>                    
+            <td>{{person.born}}</td>
+        </tr>
+    </tbody>   
+</table>            

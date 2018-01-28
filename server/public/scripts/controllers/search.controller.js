@@ -1,4 +1,4 @@
-myApp.controller("SearchController", ['$http', function($http){
+myApp.controller("SearchController", ['SwapiService', function(SwapiService){
 const self = this; 
 self.starWarsPerson = {}
 
