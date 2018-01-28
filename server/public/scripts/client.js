@@ -1,4 +1,4 @@
-let myApp = angular.module ('myApp', [ 'ngRoute', 'ngMaterial']);
+let myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function($routeProvider){
     console.log('config loaded');
@@ -12,4 +12,7 @@ myApp.config(function($routeProvider){
             templateUrl: '/views/favorites.html',
             controller: 'FavoritesController as vm'
         })
+        .otherwise(
+            { redirectTo: '/search' }
+        );
 });//end app config

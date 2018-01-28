@@ -1,60 +1,58 @@
 myApp.service('SwapiService',['$http', function($http) {
     console.log('inside service');
         const self = this;
-        self.starWarsPerson = {}
+        self.searchResults = {list: []}
+        self.starWars.people = {list: []}
+        self.favorites.planets = { list: []}
 
 //GET requests//
-self.getPerson = function (){
-    $http.get('https://www.swapi.co/api/people/')
-        .then(function(response){
-            self.starWarsPerson = response.data.data
-            console.log(response);
-        })
-        .catch(function(response) {
-            console.log('error on Get: ', response); 
-        });
-}//end get person
+self.searchWithKeyword = function(source, searchText){
+    
+    const config = {
+        params: {search: searchText}
+    };
+    
+    $http.get(`https://www.swapi.co/api/${source}`, config)
+        .then( function(response){
+        
+        self.searchResults.list = response.data.results;       
+    })
+};//end getting search results 
+//POST Requests//
 
-self.getPerson();
-
-//POST requests//
-self.addPerson = function (person) {
-    $http.post('/swapi', person)
+self.addMyFavorites = function(favorite){
+    $http.post('/favorites', favorite)
         .then(function(response) {
-        console.log('post response', response);
-    })
-        .catch(function (response) {
-        console.log('error on post', response);
-    });
-}//end 
-
-
-//PUT requests//
-self.searchButton = function(person) {
-    $http.put(`/swapi/submit/${person._id}`, person)
-    .then(function (response) {
-        // console.log('get response', response);
-        self.getPerson(); 
-    })
-    .catch(function (response) {
-        console.log('error on put update person:', response);
-    });
-}
-
-
-//DELETE requests//
-self.deleteFavorite = function(id) {
-    $http.delete(`/swapi/${id}`)
-        .then(function (response) {
-            // console.log('get response', response);
-            self.getPerson();
+            console.log('post response', response);
         })
-        .catch(function (response) {
-            console.log('error on delete person from favorites', response);
+            .catch(function (response) {
+            console.log('error on post', response);
         });
-};
+}//end adding to favorites list 
 
+self.getMyFavorites = function (){
+    $http.get('/favorites/people')
+        .then( function(response){
+            console.log('getting my favorite people: ', response.data);
+                
+            self.starWars.people.list = response.data;
 
+        })
+        .catch( function(error){
+            console.log('error getting my favorite people: ', error);
+                
+        })
+    $http.get('/favorites/people')
+        .then( function(response){
+            console.log('getting my favorite planets: ', response.data);
+                
+            self.starWars.planets.list = response.data;
 
-
+        })
+        .catch( function(error){
+            console.log('error getting my favorite planets: ', error);
+                
+        })
+}
+self.getMyFavorites();
 }]);//end service 
