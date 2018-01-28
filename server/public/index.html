@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars API MEAN app</title>
+<!-- Angular Stuff -->
+    <script src="vendors/angular.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- <script src="vendors/angular-route.min.js"></script> -->
+
+    <!--Angular Material-->
+
+
+    <!--Application stuff-->
+    <script src="/scripts/client.js"></script>
+    <script src="/scripts/controllers/search.controller.js"></script>
+    <script src="/scripts/controllers/favorites.controller.js"></script>
+    <script type="text/javascript" src="/scripts/services/swapi.service.js"></script>
+</head>
+<body ng-app="myApp">
+    <nav ng-include="'/views/templates/nav.html'"></nav>
+        <h1 class="title">Search and Save Favorites</h1>
+
+    <main ng-view>
+
+    <!-- VIEWS ARE PLACED HERE -->
+
+
+    </main>
+</body>
+</html>
