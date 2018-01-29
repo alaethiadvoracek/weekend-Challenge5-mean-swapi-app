@@ -10,7 +10,7 @@ app.use('/swapi', swapiRouter);
 
 /** ---------- MONGOOSE ------------ **/
 const mongoose = require('mongoose');
-const databaseUrl = 'mongodb://localhost:27017/employeeDatabase';
+const databaseUrl = 'mongodb://localhost:27017/swapiDatabase';
 
 
 mongoose.connect(databaseUrl);

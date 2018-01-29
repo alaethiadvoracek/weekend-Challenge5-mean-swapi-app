@@ -1,5 +1,5 @@
 <h1>Search View</h1>
-<button ng-click="vm.search(vm.selectedOption.source)">Search</button>
+<button ng-click="">Search</button>
     <div>
         <label>Search By: </label>
             <select id="searchOptions">
@@ -7,29 +7,6 @@
                 <option value="planet">Planet</option>
             </select>
         <div>
-            <label>Search for:</label> <input type="text" ng-model="vm.selectedOption.searchText" placeholder="search with keyword">
+            <label>Search for:</label> <input type="text" ng-model="" placeholder="search with keyword">
         </div>
-    </div>
-        <div ng-if="vm.toggle.person">
-            <div class ="results-card" ng-repeat="result in vm.searchResults.list">
-                <label>Name:</label> <label>{{result.name}}</label><br>
-                <label>Birth Year:</label> <label>{{result.birth_year}}</label><br>
-                <label>Gender:</label> <label>{{result.gender}}</label><br>
-                <label>Height:</label> <label>{{result.height}}</label><br>
-                <label>Species:</label> <label>{{result.species}}</label><br>
-                <button ng-click="vm.addMyFavorites(result, vm.selectedOption)">Add to Favorites</button>
-            </div>
-        </div> 
-        <div ng-if="vm.toggle.planets">
-            <h1>Planets</h1>
-            <div class ="results-card" ng-repeat="result in vm.searchResults.list">
-                <label>Name:</label> <label>{{result.name}}</label><br>
-                <label>Population:</label> <label>{{result.population}}</label><br>
-                <label>Climate:</label> <label>{{result.climate}}</label><br>
-                <label>Terrain:</label> <label>{{result.terrain}}</label><br>
-                <label>Surface Water:</label> <label>{{result.surface_water}}</label><br>
-                <label>Residents:</label> <label>{{result.residents}}</label><br>
-                <button ng-click="vm.addMyFavorites(result)">Add to Favorites</button>
-            </div>
-        </div>
-        
+    
