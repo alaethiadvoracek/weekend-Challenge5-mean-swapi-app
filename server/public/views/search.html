@@ -1,13 +1,14 @@
 <h1>Search View</h1>
-<button ng-click="vm.searchButton(vm.addedPerson)">Search</button>
     <div>
         <label>Search By: </label>
             <select id="searchOptions">
                 <option value="people">People</option>
-                <!-- <option value="planet">Planet</option>
-                <option value="vehicle">Vehicles</option> -->
+                <option value="planet">Planet</option>
+                <option value="vehicle">Vehicles</option>
+    
                 
             </select>
+            <button ng-click="vm.searchButton(vm.addedPerson)">Search</button>
         <div>
             <label>Search for:</label> <input type="text"  placeholder="search with keyword">
         </div>

@@ -11,10 +11,14 @@
 ## BASE MODE 
 - [] Search View 
     - [] search results on DOM 
-    - [] add favorite button 
+    - [] add favorite button when search is added to the DOM 
+    - [] get requests to get data from the API 
+    - [] Post to get data to the DOM 
+    - [] implement bootstrap cards
 - [] Favorites View
     - [] delete favorite 
     - [] show total favorites (top right) ? 
+    - [] 
 
 ## HARD MODE 
 - [] get a giphy for each favorite when user clicks on favorite 
